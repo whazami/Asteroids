@@ -19,11 +19,28 @@ Alternatively, Windows users can test the game by running the Asteroids.exe file
 
 ## How to Play
 
-You can control your spaceship using the mouse and keyboard or a gamepad.
+You can control your spaceship using the mouse and keyboard or a gamepad, here's how:
 
-When using the mouse and keyboard, you can move your ship using WASD keys (or ZQSD on AZERTY) and fire with the left click.
-
-When using a gamepad, the left joystick moves your ship, the right one rotates it and the right trigger (R2 on PlayStation controllers) fires.
+<table>
+  <tr>
+    <td></td>
+    <th>Move</th>
+    <th>Rotate</th>
+    <th>Fire</th>
+  </tr>
+  <tr>
+    <th>Mouse & Keyboard</th>
+    <td align="center">WASD/ZQSD keys</td>
+    <td align="center">Move mouse pointer</td>
+    <td align="center">Left click</td>
+  </tr>
+  <tr>
+    <th>Gamepad</th>
+    <td align="center">Left joystick</td>
+    <td align="center">Right joystick</td>
+    <td align="center">Right trigger</td>
+  </tr>
+</table>
 
 The game ends if you run out of lives or if the countdown timer reaches zero.
 
