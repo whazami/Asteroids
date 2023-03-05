@@ -4,13 +4,16 @@ Asteroids is a Star Wars themed remake of the classic game Asteroids, made in C+
 
 ## Installation
 
-To run this game on your computer, you will need to have SFML installed. You can download SFML [here](https://www.sfml-dev.org/download.php) and follow the installation instructions for your operating system.
+To run this game on your computer, you will need to have SFML installed. Here are the steps to install SFML and run this game:
 
-After installing SFML, you can download the source code for this game directly from this repository, or by cloning it using the command line:
+* Download SFML from the official website [here](https://www.sfml-dev.org/download.php).
+* Select the appropriate version for your operating system and extract the files to a directory of your choice.
+* Download the source code for this game directly from this repository, or by cloning it using the command line:
 ```bash
 git clone https://github.com/whazami/Asteroids.git
 ```
-Once you have downloaded the source code, you can open the project in your preferred C++ IDE and compile it.
+* Open the project in your preferred C++ IDE and configure the build settings to link SFML. You can find instructions for linking SFML in various C++ IDEs [here](https://www.sfml-dev.org/tutorials/2.5/start-vc.php).
+* Build the project.
 
 Alternatively, Windows users can test the game by running the Asteroids.exe file, located in the "bin" folder.
 
