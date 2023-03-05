@@ -11,6 +11,8 @@
 
 #include <fstream>
 
+#include "Constantes.h"
+
 using namespace std;
 
 enum class LvlMode { Asteroids, Ships, AsteroidsTime, ShipsTime };

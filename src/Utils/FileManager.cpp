@@ -5,7 +5,7 @@ int	getNbrOfUnlockedElem(string filenameAndElem)
 	// On décrypte le fichier
 	cryptOrDecryptFile(filenameAndElem);
 
-	ifstream file("Assets/Game Data/" + filenameAndElem);
+	ifstream file(assetsPath + "/Game Data/" + filenameAndElem);
 	if (!file)
 	{
 		cout << "Erreur lors de l'ouverture du fichier \"" + filenameAndElem + "\"." << endl;
@@ -31,7 +31,7 @@ void fillLevel(Level* lvl)
 	cryptOrDecryptFile("Levels");
 
 	// On ouvre le fichier et on va jusqu'au niveau correspondant
-	ifstream lvls("Assets/Game Data/Levels");
+	ifstream lvls(assetsPath + "/Game Data/Levels");
 	if (!lvls)
 	{
 		cout << "Erreur lors de l'ouverture du fichier \"Levels\"." << endl;
@@ -139,7 +139,7 @@ int getIndexNewShip(int numLvl)
 	cryptOrDecryptFile("Levels");
 
 	// On ouvre le fichier et on va jusqu'au niveau correspondant
-	ifstream lvls("Assets/Game Data/Levels");
+	ifstream lvls(assetsPath + "/Game Data/Levels");
 	if (!lvls)
 	{
 		cout << "Erreur lors de l'ouverture du fichier \"Levels\"." << endl;
@@ -172,7 +172,7 @@ void incrementUnlockedElem(string filenameAndElem)
 	cryptOrDecryptFile(filenameAndElem);
 
 	// On ouvre le fichier et on va jusqu'au niveau correspondant
-	fstream file("Assets/Game Data/" + filenameAndElem, ios::in | ios::out);
+	fstream file(assetsPath + "/Game Data/" + filenameAndElem, ios::in | ios::out);
 	if (!file)
 	{
 		cout << "Erreur lors de l'ouverture du fichier \"" << filenameAndElem << "\"." << endl;
@@ -190,7 +190,7 @@ void cryptOrDecryptFile(string filename)
 {
 	errno = 0;
 	fstream lvls;
-	lvls.open("Assets/Game Data/" + filename, ios::in);
+	lvls.open(assetsPath + "/Game Data/" + filename, ios::in);
 	if (!lvls)
 	{
 		cout << "Erreur lors de l'ouverture en entrée du fichier " << filename << "." << endl;
@@ -211,7 +211,7 @@ void cryptOrDecryptFile(string filename)
 		c ^= 202;
 	lvls.close();
 
-	lvls.open("Assets/Game Data/" + filename, ios::out | ios::trunc);
+	lvls.open(assetsPath + "/Game Data/" + filename, ios::out | ios::trunc);
 	if (!lvls)
 		cout << "Erreur lors de l'ouverture en sortie du fichier " << filename << "." << endl;
 
@@ -226,7 +226,7 @@ void displayFileError()
 qui empêche l'accès aux fichiers du dossier \"Game Data\" ou à une modification de l'un de ces derniers.",
 		L"Erreur de lecture du fichier des données du jeu.",
 		MB_ICONERROR | MB_OK);
-	ofstream lvls("Assets/Game Data/Levels"), ships("Assets/Game Data/Ships");
+	ofstream lvls(assetsPath + "/Game Data/Levels"), ships(assetsPath + "/Game Data/Ships");
 	lvls << "Fichier corrompu bzzt bzzzzt";
 	ships << "Fichier corrompu bzzt bzzzzt";
 	exit(-1);

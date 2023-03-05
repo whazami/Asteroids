@@ -422,19 +422,19 @@ bool Asteroid::isTransparent()
 
 void Asteroid::loadFiles()
 {
-    if (!Asteroid::texture->loadFromFile("Assets/Images/Asteroid.png"))
+    if (!Asteroid::texture->loadFromFile(assetsPath + "/Images/Asteroid.png"))
         cout << "Erreur chargement image asteroid." << endl;
 
-    if (!Asteroid::explosionT->loadFromFile("Assets/Images/Animations/Explosion.png"))
+    if (!Asteroid::explosionT->loadFromFile(assetsPath + "/Images/Animations/Explosion.png"))
         cout << "Erreur chargement image animation explosion asteroid." << endl;
 
-    if (!Asteroid::feudArtificeT->loadFromFile("Assets/Images/Animations/Feu d'Artifice.png"))
+    if (!Asteroid::feudArtificeT->loadFromFile(assetsPath + "/Images/Animations/Feu d'Artifice.png"))
         cout << "Erreur chargement image animation feu d'artifice." << endl;
 
-    if (!Asteroid::bufferExplosion->loadFromFile("Assets/Sons/Explosions/Explosion.wav"))
+    if (!Asteroid::bufferExplosion->loadFromFile(assetsPath + "/Sons/Explosions/Explosion.wav"))
         cout << "Erreur chargement son explosion." << endl;
 
-    if (!Asteroid::bufferArtifice->loadFromFile("Assets/Sons/Explosions/Feu D'Artifice.wav"))
+    if (!Asteroid::bufferArtifice->loadFromFile(assetsPath + "/Sons/Explosions/Feu D'Artifice.wav"))
         cout << "Erreur chargement son feu d'artifice." << endl;
 }
 

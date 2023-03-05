@@ -11,7 +11,7 @@ S_InGame::S_InGame()
     Asteroid::loadFiles();
 
     // Chargement + Init textes
-    if (!this->gameOverTexture.loadFromFile("Assets/Images/Textes/Game Over.png"))
+    if (!this->gameOverTexture.loadFromFile(assetsPath + "/Images/Textes/Game Over.png"))
         cout << "Erreur du chargement de l'images texte 'Game Over'." << endl;
 
     this->gameOverText.setTexture(this->gameOverTexture);
@@ -20,7 +20,7 @@ S_InGame::S_InGame()
     this->gameOverText.setScale(0.4f * screenScaleX, 0.4f * screenScaleX);
     this->gameOverText.setColor(sf::Color::White - sf::Color(0, 0, 0, 255));
 
-    if (!this->victoryTexture.loadFromFile("Assets/Images/Textes/Victory.png"))
+    if (!this->victoryTexture.loadFromFile(assetsPath + "/Images/Textes/Victory.png"))
         cout << "Erreur du chargement de l'images texte 'Victory'." << endl;
 
     this->victoryText.setTexture(this->victoryTexture);
@@ -29,7 +29,7 @@ S_InGame::S_InGame()
     this->victoryText.setScale(0.4f * screenScaleX, 0.4f * screenScaleX);
     this->victoryText.setColor(sf::Color::White - sf::Color(0, 0, 0, 255));
 
-    if (!this->retroFont.loadFromFile("Assets/Fonts/Retro Gaming.ttf"))
+    if (!this->retroFont.loadFromFile(assetsPath + "/Fonts/Retro Gaming.ttf"))
         cout << "Erreur du chargement de la font retro dans 'InGame'." << endl;
 
     this->retry.setFont(retroFont);
@@ -88,7 +88,7 @@ S_InGame::S_InGame()
 /// MAIN FUNCTIONS ///
 void S_InGame::init()
 {
-    this->setMusic("Assets/Musiques/States/In Game.ogg");
+    this->setMusic(assetsPath + "/Musiques/States/In Game.ogg");
 
     // On remplit la structure 'currLvl'
     this->currLvl.numLvl = State::niveauChoisi + 1;
@@ -203,7 +203,7 @@ void S_InGame::update(float frameTime)
 
         if (!this->musicStarted)
         {
-            this->setMusic("Assets/Musiques/End of Game/Victory.ogg");
+            this->setMusic(assetsPath + "/Musiques/End of Game/Victory.ogg");
             int indNewShip = getIndexNewShip(this->currLvl.numLvl);
             if (indNewShip == getNbrOfUnlockedElem("Ships"))
             {
@@ -226,7 +226,7 @@ void S_InGame::update(float frameTime)
 
             if (!this->musicStarted)
             {
-                this->setMusic("Assets/Musiques/End of Game/Game Over.ogg");
+                this->setMusic(assetsPath + "/Musiques/End of Game/Game Over.ogg");
                 this->musicStarted = true;
             }
         }

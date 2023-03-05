@@ -11,7 +11,7 @@ const sf::Color gris(125, 125, 125);
 S_ChoixNiveau::S_ChoixNiveau() : NB_NIVEAUX_COLONNE(8), NB_MAX_NIVEAUX(NB_NIVEAUX_COLONNE * 3)
 {
     // Chargement + Init Font
-    if (!this->retroFont.loadFromFile("Assets/Fonts/Retro Gaming.ttf"))
+    if (!this->retroFont.loadFromFile(assetsPath + "/Fonts/Retro Gaming.ttf"))
         cout << "Erreur du chargement de la police Retro Gaming" << endl;
 
     this->textChoose.setFont(this->retroFont);
@@ -22,7 +22,7 @@ S_ChoixNiveau::S_ChoixNiveau() : NB_NIVEAUX_COLONNE(8), NB_MAX_NIVEAUX(NB_NIVEAU
     this->textChoose.setStyle(sf::Text::Bold);
 
     // Fleche
-    if (!this->flecheT.loadFromFile("Assets/Images/Icones/Fleche.png"))
+    if (!this->flecheT.loadFromFile(assetsPath + "/Images/Icones/Fleche.png"))
         cout << "Erreur du chargement de l'image de la fleche." << endl;
 
     this->fleche.setTexture(this->flecheT);
@@ -38,7 +38,7 @@ S_ChoixNiveau::S_ChoixNiveau() : NB_NIVEAUX_COLONNE(8), NB_MAX_NIVEAUX(NB_NIVEAU
     this->rectFleche.setFillColor(sf::Color::Transparent);
     this->rectFleche.setOutlineColor(gris);
 
-    if (!this->rondT.loadFromFile("Assets/Images/Boutons/Rond.png"))
+    if (!this->rondT.loadFromFile(assetsPath + "/Images/Boutons/Rond.png"))
         cout << "Erreur du chargement de l'image du bouton rond." << endl;
 
     this->rond.setTexture(this->rondT);
@@ -87,7 +87,7 @@ void S_ChoixNiveau::init()
     this->numNiveaux[this->niveauChoisi].setFillColor(sf::Color::Black);
 
     // Music
-    this->setMusic("Assets/Musiques/States/Menu.ogg");
+    this->setMusic(assetsPath + "/Musiques/States/Menu.ogg");
 }
 
 void S_ChoixNiveau::update(float frameTime)                                                                                                                                                                       // Frame time non utilisé

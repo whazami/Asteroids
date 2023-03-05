@@ -21,7 +21,7 @@ FenetrePopup::FenetrePopup() : windowSize(650.f * screenScaleX, 160.f * screenSc
 	this->icone.setPosition(this->fenetre.getPosition() + sf::Vector2f(40.f * screenScaleX, 40.f * screenScaleY));
 
 	// Textes
-	if (!this->retroFont.loadFromFile("Assets/Fonts/Retro Gaming.ttf"))
+	if (!this->retroFont.loadFromFile(assetsPath + "/Fonts/Retro Gaming.ttf"))
 		cout << "Erreur chargement de la font." << endl;
 	this->titre.setFont(this->retroFont);
 	this->titre.setCharacterSize(25 * screenScaleX);
@@ -32,7 +32,7 @@ FenetrePopup::FenetrePopup() : windowSize(650.f * screenScaleX, 160.f * screenSc
 	this->message.setPosition(titre.getPosition() + sf::Vector2f(0, 40 * screenScaleY));
 
 	// Sound
-	if (!this->soundBuffer.loadFromFile("Assets/Sons/Notification.wav"))
+	if (!this->soundBuffer.loadFromFile(assetsPath + "/Sons/Notification.wav"))
 		cout << "Erreur du chargement du son de la notification de la fanêtre popup." << endl;
 	this->sound.setBuffer(this->soundBuffer);
 }
@@ -72,7 +72,7 @@ void FenetrePopup::affiche(sf::Sprite* icone, string titre, string message, int 
 
 void FenetrePopup::affiche(Icone icone, string titre, string message, int volume, sf::Color contourColor, sf::Color textColor, sf::Color backgroundColor)
 {
-	if (!this->iconeT.loadFromFile("Assets/Images/Icones/" + this->getStrIcone(icone) + ".png"))
+	if (!this->iconeT.loadFromFile(assetsPath + "/Images/Icones/" + this->getStrIcone(icone) + ".png"))
 		cout << "Erreur de chargement de l'icone " << this->getStrIcone(icone) << endl;
 	this->icone.setTexture(iconeT);
 

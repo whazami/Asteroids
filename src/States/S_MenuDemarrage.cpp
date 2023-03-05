@@ -6,7 +6,7 @@ const string S_MenuDemarrage::keyboardMsgs[2] = { "Press Enter!", "(Or connect a
 S_MenuDemarrage::S_MenuDemarrage()
 {
 	// Background decorations
-	if (!this->xwingT.loadFromFile("Assets/Images/Vaisseaux/X-Wing.png"))
+	if (!this->xwingT.loadFromFile(assetsPath + "/Images/Vaisseaux/X-Wing.png"))
 		cout << "Erreur du chargement de l'image de x-wing." << endl;
 	this->xwing.setTexture(this->xwingT);
 	this->xwing.setOrigin(this->xwing.getLocalBounds().width / 2.f, this->xwing.getLocalBounds().height / 2.f);
@@ -14,7 +14,7 @@ S_MenuDemarrage::S_MenuDemarrage()
 	this->xwing.setPosition(250 * screenScaleX, 170 * screenScaleY);
 	this->xwing.setRotation(105);
 
-	if (!this->lasersT.loadFromFile("Assets/Images/Tirs/X-Wing.png"))
+	if (!this->lasersT.loadFromFile(assetsPath + "/Images/Tirs/X-Wing.png"))
 		cout << "Erreur du chargement de l'image de tir du x-wing." << endl;
 	const sf::Vector2f offset(100.f * screenScaleX, 26.f * screenScaleY);
 	for (int i = 0; i < 6; i++) {
@@ -27,7 +27,7 @@ S_MenuDemarrage::S_MenuDemarrage()
 		this->lasers[i].setRotation(this->xwing.getRotation());
 	}
 
-	if (!this->explosionT.loadFromFile("Assets/Images/Animations/Explosion.png"))
+	if (!this->explosionT.loadFromFile(assetsPath + "/Images/Animations/Explosion.png"))
 		cout << "Erreur du chargement de l'image d'explosion." << endl;
 	this->explosion.setTexture(this->explosionT);
 	this->explosion.setTextureRect(sf::IntRect(800, 100, 100, 100));
@@ -35,7 +35,7 @@ S_MenuDemarrage::S_MenuDemarrage()
 	this->explosion.setScale(3.2f * screenScaleX, 3.2f * screenScaleX);
 	this->explosion.setPosition(1750 * screenScaleX, 570 * screenScaleY);
 
-	if (!this->asteroidsT.loadFromFile("Assets/Images/Asteroid.png"))
+	if (!this->asteroidsT.loadFromFile(assetsPath + "/Images/Asteroid.png"))
 		cout << "Erreur du chargement de l'image d'Asteroid" << endl;
 	for (int i = 0; i < 3; i++) {
 		this->asteroids[i].setTexture(this->asteroidsT);
@@ -49,8 +49,8 @@ S_MenuDemarrage::S_MenuDemarrage()
 	this->asteroids[2].setPosition(1200 * screenScaleX, 800 * screenScaleY);
 
 	// Fonts & Texts
-	this->retroFont.loadFromFile("Assets/Fonts/Retro Gaming.ttf");
-	this->vintageFont.loadFromFile("Assets/Fonts/Vintage.ttf");
+	this->retroFont.loadFromFile(assetsPath + "/Fonts/Retro Gaming.ttf");
+	this->vintageFont.loadFromFile(assetsPath + "/Fonts/Vintage.ttf");
 
 	this->Asteroids.setFont(this->vintageFont);
 	this->Asteroids.setString("Asteroids");
@@ -80,7 +80,7 @@ void S_MenuDemarrage::init()
 	}
 
 	// Music
-	this->setMusic("Assets/Musiques/States/Menu.ogg");
+	this->setMusic(assetsPath + "/Musiques/States/Menu.ogg");
 }
 
 void S_MenuDemarrage::update(float frameTime)																							// Frame time non utilisé

@@ -9,7 +9,7 @@ using namespace std;
 S_ChoixVaisseau::S_ChoixVaisseau()
 {
     // Chargement + Init Font
-    if (!this->retroFont.loadFromFile("Assets/Fonts/Retro Gaming.ttf"))
+    if (!this->retroFont.loadFromFile(assetsPath + "/Fonts/Retro Gaming.ttf"))
         cout << "Erreur du chargement de la police Retro Gaming" << endl;
 
     this->textChoose.setFont(this->retroFont);
@@ -72,7 +72,7 @@ void S_ChoixVaisseau::init()
     this->vaisseauChoisi = 0;
 
     // Music
-    this->setMusic("Assets/Musiques/States/Menu.ogg");
+    this->setMusic(assetsPath + "/Musiques/States/Menu.ogg");
 }
 
 void S_ChoixVaisseau::update(float frameTime)                                                                                                                                                                 // Frame time non utilisé
@@ -225,7 +225,7 @@ void S_ChoixVaisseau::cheatCode()
                 {
                     State::affichePopup(Icone::Musique, "Cheat code désactivé", "Musique par défaut en lecture.");
                     this->music->stop();
-                    if (!this->music->openFromFile("Assets/Musiques/States/Menu.ogg"))
+                    if (!this->music->openFromFile(assetsPath + "/Musiques/States/Menu.ogg"))
                         cout << "Erreur chargement musique du menu" << endl;
                     this->music->play();
                     this->cheatMusic = false;
@@ -277,7 +277,7 @@ void S_ChoixVaisseau::cheatCode()
                     {
                         State::affichePopup(Icone::Musique, "Cheat code activé !", "Pour revenir à la musique par défaut, appuyez sur 'Carré', 'Triangle', 'R2' rapidement.");
                         this->music->stop();
-                        if (!this->music->openFromFile("Assets/Musiques/Cheat/Zola - Baby Boy.ogg"))
+                        if (!this->music->openFromFile(assetsPath + "/Musiques/Cheat/Zola - Baby Boy.ogg"))
                             cout << "Erreur chargement ZOLA Baby Boy" << endl;
                         this->music->setPlayingOffset(sf::seconds(9.5f));
                         this->music->play();
@@ -288,7 +288,7 @@ void S_ChoixVaisseau::cheatCode()
                     {
                         State::affichePopup(Icone::Musique, "Cheat code activé !", "Pour revenir à la musique par défaut, appuyez sur 'Carré', 'Triangle', 'R2' rapidement.");
                         this->music->stop();
-                        if (!this->music->openFromFile("Assets/Musiques/Cheat/Zola - L1 L2.ogg"))
+                        if (!this->music->openFromFile(assetsPath + "/Musiques/Cheat/Zola - L1 L2.ogg"))
                             cout << "Erreur chargement ZOLA L1 L2" << endl;
                         this->music->setPlayingOffset(sf::seconds(21.5f));
                         this->music->play();

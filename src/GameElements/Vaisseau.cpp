@@ -27,7 +27,7 @@ Vaisseau::Vaisseau(string nom, int pv, int degats, int nbTirsSimul, float cadenc
     /// PARTIE IMAGE ///
     this->skins[nom] = new sf::Texture;
 
-    string nameFichierI = "Assets/Images/Vaisseaux/" + nom + ".png";
+    string nameFichierI = assetsPath + "/Images/Vaisseaux/" + nom + ".png";
     if (!this->skins[nom]->loadFromFile(nameFichierI))
         cout << "Erreur chargement de " << nameFichierI << endl;
 
@@ -42,29 +42,29 @@ Vaisseau::Vaisseau(string nom, int pv, int degats, int nbTirsSimul, float cadenc
 
     /// PARTIE SONS ///
     this->buffersPew[nom] = new sf::SoundBuffer;
-    string nameFichierB = "Assets/Sons/Tirs/" + nom + ".wav";
+    string nameFichierB = assetsPath + "/Sons/Tirs/" + nom + ".wav";
     if (!this->buffersPew[nom]->loadFromFile(nameFichierB))
         cout << "Erreur chargement du son de " << nom << endl;
 
     this->bufferSurchauffe = new sf::SoundBuffer;
-    if (!this->bufferSurchauffe->loadFromFile("Assets/Sons/Surchauffe Canons.wav"))
+    if (!this->bufferSurchauffe->loadFromFile(assetsPath + "/Sons/Surchauffe Canons.wav"))
         cout << "Erreur chargement du son de surchauffe de canon" << endl;
 
     this->bufferExplosion = new sf::SoundBuffer;
-    if (!this->bufferExplosion->loadFromFile("Assets/Sons/Explosions/Explosion.wav"))
+    if (!this->bufferExplosion->loadFromFile(assetsPath + "/Sons/Explosions/Explosion.wav"))
         cout << "Erreur chargement du son d'explosion." << endl;
 
     this->bufferImpact = new sf::SoundBuffer;
-    if (!this->bufferImpact->loadFromFile("Assets/Sons/Impacts/Impact.wav"))
+    if (!this->bufferImpact->loadFromFile(assetsPath + "/Sons/Impacts/Impact.wav"))
         cout << "Erreur chargement du son d'impact." << endl;
 
     this->bufferLaserImpact = new sf::SoundBuffer;
-    if (!this->bufferLaserImpact->loadFromFile("Assets/Sons/Impacts/Laser Impact.wav"))
+    if (!this->bufferLaserImpact->loadFromFile(assetsPath + "/Sons/Impacts/Laser Impact.wav"))
         cout << "Erreur chargement du son d'impact de laser." << endl;
 
     /// PARTIE ANIMATION ///
     this->explosionT = new sf::Texture;
-    if (!this->explosionT->loadFromFile("Assets/Images/Animations/Explosion.png"))
+    if (!this->explosionT->loadFromFile(assetsPath + "/Images/Animations/Explosion.png"))
         cout << "Erreur chargement de la Texture d'explosion." << endl;
 
     this->explosionSprite = new sf::Sprite;

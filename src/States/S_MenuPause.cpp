@@ -10,7 +10,7 @@ S_MenuPause::S_MenuPause() : rectMenu(screenSize / 2.f), rectSon(sf::Vector2f(75
 	this->rectMenu.setFillColor(sf::Color::Black);
 
 	// Textes
-	this->retroFont.loadFromFile("Assets/Fonts/Retro Gaming.ttf");
+	this->retroFont.loadFromFile(assetsPath + "/Fonts/Retro Gaming.ttf");
 
 	this->textes[0].setFont(this->retroFont);
 	this->textes[0].setString("PAUSE");
@@ -70,37 +70,37 @@ S_MenuPause::S_MenuPause() : rectMenu(screenSize / 2.f), rectSon(sf::Vector2f(75
 	// Images
 	float scale = 0.75f * this->rectSon.getSize().x / 150.f;																		// Les rectangles sont des carrés, il en est de même pour les icônes (dont leurs côtés = 150px)
 
-	this->sonT.loadFromFile("Assets/Images/Icones/Son.png");
+	this->sonT.loadFromFile(assetsPath + "/Images/Icones/Son.png");
 	this->son.setTexture(this->sonT);
 	this->son.setOrigin(this->son.getGlobalBounds().width / 2.f, this->son.getGlobalBounds().height / 2.f);
 	this->son.setPosition(this->rectSon.getPosition());
 	this->son.setScale(scale, scale);
 
-	this->sonCoupeT.loadFromFile("Assets/Images/Icones/Son Coupe.png");
+	this->sonCoupeT.loadFromFile(assetsPath + "/Images/Icones/Son Coupe.png");
 	this->sonCoupe.setTexture(this->sonCoupeT);
 	this->sonCoupe.setOrigin(this->sonCoupe.getGlobalBounds().width / 2.f, this->sonCoupe.getGlobalBounds().height / 2.f);
 	this->sonCoupe.setPosition(this->rectSon.getPosition());
 	this->sonCoupe.setScale(scale, scale);
 
-	this->musiqueT.loadFromFile("Assets/Images/Icones/Musique.png");
+	this->musiqueT.loadFromFile(assetsPath + "/Images/Icones/Musique.png");
 	this->musique.setTexture(this->musiqueT);
 	this->musique.setOrigin(this->musique.getGlobalBounds().width / 2.f, this->musique.getGlobalBounds().height / 2.f);
 	this->musique.setPosition(this->rectMusique.getPosition());
 	this->musique.setScale(scale, scale);
 
-	this->musiqueCoupeeT.loadFromFile("Assets/Images/Icones/Musique Coupee.png");
+	this->musiqueCoupeeT.loadFromFile(assetsPath + "/Images/Icones/Musique Coupee.png");
 	this->musiqueCoupee.setTexture(this->musiqueCoupeeT);
 	this->musiqueCoupee.setOrigin(this->musiqueCoupee.getGlobalBounds().width / 2.f, this->musiqueCoupee.getGlobalBounds().height / 2.f);
 	this->musiqueCoupee.setPosition(this->rectMusique.getPosition());
 	this->musiqueCoupee.setScale(scale, scale);
 
-	this->vibrationsT.loadFromFile("Assets/Images/Icones/Vibrations.png");
+	this->vibrationsT.loadFromFile(assetsPath + "/Images/Icones/Vibrations.png");
 	this->vibrations.setTexture(this->vibrationsT);
 	this->vibrations.setOrigin(this->vibrations.getGlobalBounds().width / 2.f, this->vibrations.getGlobalBounds().height / 2.f);
 	this->vibrations.setPosition(this->rectVibrations.getPosition() - sf::Vector2f(1 * screenScaleX, 0));
 	this->vibrations.setScale(scale * 1.1f, scale * 1.1f);
 
-	this->vibrationsCoupeesT.loadFromFile("Assets/Images/Icones/Vibrations Coupees.png");
+	this->vibrationsCoupeesT.loadFromFile(assetsPath + "/Images/Icones/Vibrations Coupees.png");
 	this->vibrationsCoupees.setTexture(this->vibrationsCoupeesT);
 	this->vibrationsCoupees.setOrigin(this->vibrationsCoupees.getGlobalBounds().width / 2.f, this->vibrationsCoupees.getGlobalBounds().height / 2.f);
 	this->vibrationsCoupees.setPosition(this->rectVibrations.getPosition());
@@ -109,19 +109,19 @@ S_MenuPause::S_MenuPause() : rectMenu(screenSize / 2.f), rectSon(sf::Vector2f(75
 	float widthBoutons = 128.f;																																// Les images des boutons sont carrées
 	float scaleBoutons = (25.f * screenScaleX) / widthBoutons;																								// et on veut qu'elles fassent 28px de côté
 
-	this->boutonCarreT.loadFromFile("Assets/Images/Boutons/Carre.png");
-	this->toucheS.loadFromFile("Assets/Images/Boutons/S.png");
+	this->boutonCarreT.loadFromFile(assetsPath + "/Images/Boutons/Carre.png");
+	this->toucheS.loadFromFile(assetsPath + "/Images/Boutons/S.png");
 	this->boutonCarre.setOrigin(widthBoutons / 2.f, widthBoutons / 2.f);
 	this->boutonCarre.setPosition(this->rectSon.getGlobalBounds().left + this->rectSon.getGlobalBounds().width, this->rectSon.getGlobalBounds().top + this->rectSon.getGlobalBounds().height);
 	this->boutonCarre.setScale(scaleBoutons, scaleBoutons);
 
-	this->boutonTriangleT.loadFromFile("Assets/Images/Boutons/Triangle.png");
-	this->toucheD.loadFromFile("Assets/Images/Boutons/D.png");
+	this->boutonTriangleT.loadFromFile(assetsPath + "/Images/Boutons/Triangle.png");
+	this->toucheD.loadFromFile(assetsPath + "/Images/Boutons/D.png");
 	this->boutonTriangle.setOrigin(widthBoutons / 2.f, widthBoutons / 2.f);
 	this->boutonTriangle.setPosition(this->rectMusique.getGlobalBounds().left + this->rectMusique.getGlobalBounds().width, this->rectMusique.getGlobalBounds().top + this->rectMusique.getGlobalBounds().height);
 	this->boutonTriangle.setScale(scaleBoutons, scaleBoutons);
 
-	this->boutonR3T.loadFromFile("Assets/Images/Boutons/R3.png");
+	this->boutonR3T.loadFromFile(assetsPath + "/Images/Boutons/R3.png");
 	this->boutonR3.setTexture(this->boutonR3T);
 	this->boutonR3.setOrigin(widthBoutons / 2.f, widthBoutons / 2.f);
 	this->boutonR3.setPosition(this->rectVibrations.getGlobalBounds().left + this->rectVibrations.getGlobalBounds().width, this->rectVibrations.getGlobalBounds().top + this->rectVibrations.getGlobalBounds().height);
@@ -426,12 +426,12 @@ void S_MenuPause::moveVolumeCursor(sf::Event& e)
 	}
 }
 
-// Changes the user settings in the file "Assets/Game Data/Options.txt"
+// Changes the user settings in the file assetsPath + "/Game Data/Options.txt"
 void S_MenuPause::changeUserSettings(bool volume)
 {
-	ifstream iOptions("Assets/Game Data/Options.txt");
+	ifstream iOptions(assetsPath + "/Game Data/Options.txt");
 	if (!iOptions) {
-		cout << "Error: Could not open file \"Assets/Game Data/Options.txt\"" << endl;
+		cout << "Error: Could not open file + \"" + assetsPath + "/Game Data/Options.txt\"" << endl;
 		return;
 	}
 
@@ -450,7 +450,7 @@ void S_MenuPause::changeUserSettings(bool volume)
 		return;
 	iOptions.close();
 
-	ofstream oOptions("Assets/Game Data/Options.txt");
+	ofstream oOptions(assetsPath + "/Game Data/Options.txt");
 	for (auto it = content.begin(); it != content.end(); it++) {
 		int i = it - content.begin();
 		if (i == newStrI) {

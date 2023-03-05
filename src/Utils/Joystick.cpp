@@ -147,7 +147,7 @@ namespace wl
     {
         // Printing JslConnectDevices output to the file '.jsl.log'
         int jslFile, save_out = dup(fileno(stdout));
-        if ((jslFile = open("Assets/Game Data/.jsl.log", O_WRONLY | O_CREAT), 07) == -1)
+        if ((jslFile = open(string(assetsPath + "/Game Data/.jsl.log").c_str(), O_WRONLY | O_CREAT), 07) == -1)
             cerr << "Error: cannot open jsl.log as output file." << endl;
         rewind(fdopen(jslFile, "w"));
 
@@ -162,7 +162,7 @@ namespace wl
         close(save_out);
 
         // Getting the printed output from '.jsl.log'
-        ifstream jslOutput("Assets/Game Data/.jsl.log");
+        ifstream jslOutput(assetsPath + "/Game Data/.jsl.log");
         string oldLine = "", line;
 
         Joystick::isBluetooth = false;
@@ -179,7 +179,7 @@ namespace wl
         jslOutput.close();
 
         // Clearing content in 'jsl.log'
-        std::ofstream jslClear("Assets/Game Data/.jsl.log", std::ofstream::out | std::ofstream::trunc);
+        std::ofstream jslClear(assetsPath + "/Game Data/.jsl.log", std::ofstream::out | std::ofstream::trunc);
         jslClear.close();
 
         return nbJslDevices;
@@ -296,9 +296,9 @@ namespace wl
 
     bool Joystick::initVibrations()
     {
-        ifstream options("Assets/Game Data/Options.txt");
+        ifstream options(assetsPath + "/Game Data/Options.txt");
         if (!options) {
-            cout << "Error: Could not open file \"Assets/Game Data/Options.txt\"" << endl;
+            cout << "Error: Could not open file + \"" + assetsPath + "/Game Data/Options.txt\"" << endl;
             return 0;
         }
 

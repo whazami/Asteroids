@@ -12,6 +12,8 @@
 #include <thread>
 #include <Windows.h>
 
+#include "Constantes.h"
+
 constexpr float axisDeadZone = 0.1f;
 
 using namespace std;

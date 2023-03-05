@@ -17,7 +17,7 @@ Tir::Tir(string nomVaisseau, sf::Vector2f Vpos, float Vangle, float yOffset, sf:
     if (this->textures[nomVaisseau] == NULL)
     {
         this->textures[nomVaisseau] = new sf::Texture;
-        if (!this->textures[nomVaisseau]->loadFromFile("Assets/Images/Tirs/" + nomVaisseau + ".png"))
+        if (!this->textures[nomVaisseau]->loadFromFile(assetsPath + "/Images/Tirs/" + nomVaisseau + ".png"))
             cout << "Erreur chargement du tir de " << nomVaisseau << endl;
     }
 

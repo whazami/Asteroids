@@ -1,7 +1,10 @@
 ﻿#ifndef CONSTANTES_H
 #define CONSTANTES_H
 
+#include <iostream>
 #include <SFML/Graphics.hpp>
+
+const std::string assetsPath = "../Assets";
 
 constexpr float PI = 3.1415926535897932f;
 

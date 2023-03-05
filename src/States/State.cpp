@@ -56,7 +56,7 @@ void State::mainInit(sf::RenderWindow* window)
         State::reWriteOptions();
 
     // Chargement + Init Background
-    if (!State::backgroundT.loadFromFile("Assets/Images/Background.png"))
+    if (!State::backgroundT.loadFromFile(assetsPath + "/Images/Background.png"))
         cout << "Erreur chargement du background" << endl;
 
     State::background.setTexture(State::backgroundT);
@@ -149,12 +149,12 @@ void State::gestionMute()
 }
 
 /* Fonctions qui initialise les parametres du jeu inscrits
- * dans "Assets/Game Data/Options.txt". */
+ * dans assetsPath + "/Game Data/Options.txt". */
 int State::initVolume(bool son)
 {
-    ifstream options("Assets/Game Data/Options.txt");
+    ifstream options(assetsPath + "/Game Data/Options.txt");
     if (!options) {
-        cout << "Error: Could not open file \"Assets/Game Data/Options.txt\"" << endl;
+        cout << "Error: Could not open file + \"" + assetsPath + "/Game Data/Options.txt\"" << endl;
         return 0;
     }
 
@@ -187,9 +187,9 @@ void State::reWriteOptions()
         + "\nMusique : " + to_string(State::volumeMusic)
         + "\nVibrations : " + (wl::Joystick::isRumbleActivated() ? "on" : "off");
 
-    ofstream options("Assets/Game Data/Options.txt");
+    ofstream options(assetsPath + "/Game Data/Options.txt");
     if (!options) {
-        cout << "Error: Could not open file \"Assets/Game Data/Options.txt\"" << endl;
+        cout << "Error: Could not open file + \"" + assetsPath + "/Game Data/Options.txt\"" << endl;
         return;
     }
     options << content;
