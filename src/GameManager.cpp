@@ -2,12 +2,9 @@
 
 #include <SFML/Graphics.hpp>
 
-#include <Windows.h>
-
 // Constructor
 GameManager::GameManager()
 {
-    SetConsoleTitle(L"SFML Debug");
     this->window = new sf::RenderWindow(sf::VideoMode::getFullscreenModes()[0], "Asteroids!", sf::Style::Fullscreen);
     this->window->setVerticalSyncEnabled(true);     // FPS de la fenêtre égales à celles de l'écran
     State::mainInit(this->window);
