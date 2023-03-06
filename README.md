@@ -1,5 +1,9 @@
 # Asteroids
 
+<div align="center">
+  <img src="./gif/demo.gif" alt="demo">
+</div>
+
 Asteroids is a Star Wars themed remake of the classic game Asteroids, made in C++ with the SFML library. In this game, the player controls a spaceship and must navigate through space while avoiding asteroids and destroying enemy ships.
 
 ## Installation
