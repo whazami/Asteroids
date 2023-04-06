@@ -57,3 +57,7 @@ The vibration of the gamepad can cause the game to freeze/crash if it is connect
 ## Credits
 
 This game was created by Waël Hazami. Special thanks to the creators of SFML for providing the graphics and audio libraries used in this game.
+
+## License
+
+This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for details.
