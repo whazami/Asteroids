@@ -1,6 +1,6 @@
 # Asteroids
 
-Asteroids is a Star Wars themed remake of the classic game Asteroids, made in C++ with the SFML library. The game engine (bounces and collisions) is coded from scratch. In this game, the player controls a spaceship and must navigate through space while avoiding asteroids and destroying enemy ships.
+Asteroids is a Star Wars themed remake of the classic game Asteroids, made in C++ with the [SFML](https://www.sfml-dev.org/) library. The game engine (bounces and collisions) is coded from scratch. In this game, the player controls a spaceship and must navigate through space while avoiding asteroids and destroying enemy ships.
 
 <div align="center">
   <img src="./gif/demo.gif" alt="demo">
@@ -56,7 +56,7 @@ The vibration of the gamepad can cause the game to freeze/crash if it is connect
 
 ## Credits
 
-This game was created by Waël Hazami. Special thanks to the creators of SFML for providing the graphics and audio libraries used in this game.
+This game was created by Waël Hazami. Special thanks to the creators of [SFML](https://www.sfml-dev.org/) for providing the graphics and audio libraries used in this game.
 
 ## License
 
